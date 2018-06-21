@@ -1,0 +1,4 @@
+Source: bonsai-simulink
+Version: 1.0.dev1
+Build-Depends: bonsai
+Description: Simulink S-function for connecting to the Bonsai AI platform

@@ -298,6 +298,9 @@ __pycache__/
 !triplets/arm64-windows.cmake
 !triplets/x64-linux.cmake
 !triplets/x64-osx.cmake
+
+# don't ignore bonsai custom triplet!!
+!triplets/x64-windows-bns.cmake
 *.exe
 *.zip
 
