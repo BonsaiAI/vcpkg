@@ -1,4 +1,4 @@
 Source: bonsai
 Version: 1.0.dev3
-Build-Depends: cpprestsdk, boost-filesystem, boost-program-options, boost-uuid, protobuf
+Build-Depends: boost-filesystem, boost-program-options, boost-uuid, boost-property-tree, boost-beast, protobuf
 Description: Bonsai library
