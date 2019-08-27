@@ -13,25 +13,22 @@
 # set(VCPKG_LIBRARY_LINKAGE dynamic)
 
 include(vcpkg_common_functions)
-set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/bonsai)
+set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/libbonsai)
 
-vcpkg_from_github(
+vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO BonsaiAI/libbonsai
-    REF client/sdk-2018.11.27
-    SHA512 875fac9f4138bfae38915100e80c06e96c39dd9ec877b173ffabc26c2cc3f1c1d6684f278f62a364160efbe62886d88760a6d34f3e622e9fe45a2f10d8af3e78
-    HEAD_REF master
+    ARCHIVE ${DOWNLOADS}/libbonsai.zip
 )
 
 vcpkg_configure_cmake(
-    SOURCE_PATH ${SOURCE_PATH}/libbonsai
+    SOURCE_PATH ${SOURCE_PATH}
     OPTIONS -DWITH_TESTS=FALSE
 )
 
 vcpkg_install_cmake()
 
 # Handle copyright
-file(INSTALL ${SOURCE_PATH}/libbonsai/LICENSE.txt DESTINATION ${CURRENT_PACKAGES_DIR}/share/bonsai RENAME copyright)
+file(INSTALL ${SOURCE_PATH}/LICENSE.txt DESTINATION ${CURRENT_PACKAGES_DIR}/share/bonsai RENAME copyright)
 
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/share)
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
